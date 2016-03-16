@@ -2,6 +2,7 @@ class EncryptionKey
   attr_reader :rotation
 
   def initialize(key = rand.to_s[2..6])
+    @key = key
     @rotation = rotate(key)
   end
 

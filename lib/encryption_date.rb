@@ -1,8 +1,9 @@
 class EncryptionDate
-  attr_reader :date_offset
+  attr_reader :rotation
 
   def initialize(date = Time.now.strftime("%-d%-m%y").to_i)
-    @date_offset = offset(date)
+    @date = date
+    @rotation = offset(date)
   end
 
   def offset(date)
