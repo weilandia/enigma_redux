@@ -1,4 +1,12 @@
 module Translations
+
+  def cryptographer(message, operator)
+    chars_translation = translate(message)
+    rotated_chars = handle_offset(chars_translation, operator)
+    simple_rotation = simplify_offset(rotated_chars)
+    result(simple_rotation)
+  end
+  
   def translate(message)
     characters = map_characters
     message.chars.map do |letter|
